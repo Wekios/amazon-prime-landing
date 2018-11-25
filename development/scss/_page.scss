@@ -218,7 +218,8 @@ p {
 }
 .sidebar {
   @include breakpoint(phone) {
-    display: none;
+    align-self: center;
+    margin-bottom: 3rem;
   }
   @include breakpoint(desktop) {
     position: relative;

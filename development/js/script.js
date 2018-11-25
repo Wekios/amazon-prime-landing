@@ -8,7 +8,8 @@ window.onload = function() {
     var windowScrollTop = $(window).scrollTop();
     if (
       windowScrollTop >= sideBarScrollTop &&
-      windowScrollTop + sidebarHeight < footerTop
+      windowScrollTop + sidebarHeight < footerTop &&
+      window.innerWidth > 769
     ) {
       sidebar.addClass("fixed");
     } else {

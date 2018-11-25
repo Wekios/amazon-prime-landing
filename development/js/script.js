@@ -3,8 +3,6 @@ window.onload = function() {
   var sidebarHeight = $(".slide-content-img").height();
   var sideBarScrollTop = $(".sidebar").offset().top;
   var fourthSectionTop = $(".fourth-section").offset().top;
-  var sideBarWidth = $(".sidebar").width();
-  sidebar.attr("style", "width: " + sideBarWidth + "px");
 
   $(window).scroll(function() {
     var windowScrollTop = $(window).scrollTop();
@@ -17,6 +15,16 @@ window.onload = function() {
       sidebar.removeClass("fixed");
     }
   });
+
+  $(window).scroll(function() {
+    var windowScrollTop = $(window).scrollTop();
+    if (windowScrollTop + sidebarHeight > fourthSectionTop) {
+      sidebar.addClass("fixedToStay");
+    } else {
+      sidebar.removeClass("fixedToStay");
+    }
+  });
+
   console.log(sidebarHeight);
   console.log(sideBarScrollTop);
 };

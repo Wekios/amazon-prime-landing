@@ -219,6 +219,16 @@ p {
     }
   }
 }
+.sidebar {
+  position: relative;
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  .slide-content.fixedToStay {
+    position: absolute;
+    bottom: 0;
+  }
+}
 
 .fourth-section {
   background-color: #960000;
@@ -237,6 +247,9 @@ p {
     h2 {
       line-height: 1.3;
       margin: 4rem 0;
+      &:hover {
+        color: rgba($color: white, $alpha: 0.8);
+      }
     }
   }
 }

@@ -202,10 +202,7 @@ p {
     margin: 5rem 0;
   }
   &__ad {
-    @include breakpoint(phone) {
-      align-self: center;
-      margin-bottom: 3rem;
-    }
+    z-index: 666;
     img {
       width: 27.7rem;
       @include breakpoint(tab) {
@@ -220,13 +217,14 @@ p {
   }
 }
 .sidebar {
-  position: relative;
-  width: 33%;
-  display: flex;
-  justify-content: flex-end;
-  .slide-content.fixedToStay {
-    position: absolute;
-    bottom: 0;
+  @include breakpoint(phone) {
+    display: none;
+  }
+  @include breakpoint(desktop) {
+    position: relative;
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

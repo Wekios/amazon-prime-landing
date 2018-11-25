@@ -2,31 +2,19 @@ window.onload = function() {
   var sidebar = $(".slide-content");
   var sidebarHeight = $(".slide-content-img").height();
   var sideBarScrollTop = $(".sidebar").offset().top;
-  var fourthSectionTop = $(".fourth-section").offset().top;
+  var footerTop = $(".footer").offset().top;
 
   $(window).scroll(function() {
     var windowScrollTop = $(window).scrollTop();
     if (
       windowScrollTop >= sideBarScrollTop &&
-      windowScrollTop + sidebarHeight < fourthSectionTop
+      windowScrollTop + sidebarHeight < footerTop
     ) {
       sidebar.addClass("fixed");
     } else {
       sidebar.removeClass("fixed");
     }
   });
-
-  $(window).scroll(function() {
-    var windowScrollTop = $(window).scrollTop();
-    if (windowScrollTop + sidebarHeight > fourthSectionTop) {
-      sidebar.addClass("fixedToStay");
-    } else {
-      sidebar.removeClass("fixedToStay");
-    }
-  });
-
-  console.log(sidebarHeight);
-  console.log(sideBarScrollTop);
 };
 
 var date = new Date();

@@ -1,3 +1,26 @@
+window.onload = function() {
+  var sidebar = $(".slide-content");
+  var sidebarHeight = $(".slide-content-img").height();
+  var sideBarScrollTop = $(".sidebar").offset().top;
+  var fourthSectionTop = $(".fourth-section").offset().top;
+  var sideBarWidth = $(".sidebar").width();
+  sidebar.attr("style", "width: " + sideBarWidth + "px");
+
+  $(window).scroll(function() {
+    var windowScrollTop = $(window).scrollTop();
+    if (
+      windowScrollTop >= sideBarScrollTop &&
+      windowScrollTop + sidebarHeight < fourthSectionTop
+    ) {
+      sidebar.addClass("fixed");
+    } else {
+      sidebar.removeClass("fixed");
+    }
+  });
+  console.log(sidebarHeight);
+  console.log(sideBarScrollTop);
+};
+
 var date = new Date();
 var day = date.getDate();
 var month = date.getMonth() + 1;

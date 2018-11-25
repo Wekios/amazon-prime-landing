@@ -6,11 +6,15 @@
 }
 
 // Responsive font size
-@mixin fontSizeVw($fs-phone, $fs-desktop) {
+@mixin fontSizeVw($fs-phone, $fs-tab, $fs-desktop) {
   font-size: #{$fs-desktop}px;
 
   @include breakpoint(phone) {
     font-size: calcVw($fs-phone, $site-mob-design);
+  }
+
+  @include breakpoint(tab) {
+    font-size: calcVw($fs-tab, $site-tab-design);
   }
 
   @include breakpoint(desktop) {
@@ -24,8 +28,12 @@
     @media (max-width: 767px) {
       @content;
     }
+  } @else if $break == tab {
+    @media (min-width: 768px) and (max-width: 1199px) {
+      @content;
+    }
   } @else if $break == desktop {
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
       @content;
     }
   }
@@ -35,6 +43,7 @@
 
 $site-desk-design: 1920;
 $container-desk: 1280;
+$site-tab-design: 1920;
 $site-mob-design: 375;
 $container-mob: 330;
 $font-size-base: 10;
@@ -73,13 +82,18 @@ i {
 }
 a {
   text-decoration: none;
+  height: fit-content;
   &:hover {
     color: $hover;
   }
 }
 
 html {
-  @include fontSizeVw($font-size-base/2, $font-size-base);
+  @include fontSizeVw(
+    $font-size-base/2,
+    $font-size-base * 1.3,
+    $font-size-base
+  );
   @media screen and (min-width: 1921px) {
     font-size: 10px;
   }

@@ -33,6 +33,7 @@
 
   &__search {
     font-size: 2.5rem;
+    cursor: pointer;
     a {
       height: auto;
     }
@@ -96,6 +97,9 @@
       font-size: 2.2rem;
       color: $white;
       padding: 0.6rem 1rem;
+      .icon:hover {
+        color: rgba($color: white, $alpha: 0.5);
+      }
       &--fb {
         background-color: #3a5a99;
       }
@@ -105,6 +109,9 @@
       }
       &--mail {
         background-color: #8a8a8a;
+        &:hover {
+          color: rgba($color: white, $alpha: 0.5);
+        }
       }
     }
   }
@@ -134,7 +141,8 @@ p {
 }
 
 .container--section {
-  width: 96rem;
+  width: calcVw(960, $site-desk-design);
+
   padding-left: 3.1rem;
   @include breakpoint(phone) {
     width: 90%;
@@ -198,13 +206,24 @@ p {
       align-self: center;
       margin-bottom: 3rem;
     }
+    img {
+      width: 27.7rem;
+      @include breakpoint(tab) {
+        width: 20rem;
+      }
+    }
+    &.fixed {
+      position: fixed;
+      top: 0;
+      right: 16.19vw;
+    }
   }
 }
 
 .fourth-section {
   background-color: #960000;
   &--bg {
-    background: top / cover no-repeat url(".././img/amazon_music_img.jpg");
+    background: right / cover no-repeat url(".././img/amazon_music_img.jpg");
     padding-top: 2rem;
     padding-bottom: 7rem;
     h2,
@@ -236,7 +255,7 @@ p {
     margin-top: -10rem;
   }
   &__p--gray-bg {
-    margin: -1.1rem 1.5rem 1rem -5%;
+    margin-top: -2px;
     padding: 2.5rem 3.1rem;
     background: #5a5a5a;
     color: $white;
@@ -244,17 +263,22 @@ p {
   }
   .text--note {
     margin: 2.5rem 4rem;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    @include breakpoint(desktop) {
+      font-size: 1.5rem;
+    }
   }
 }
 
 .footer {
   position: relative;
   &__text-content {
-    position: absolute;
     top: 0;
     left: 37rem;
     padding-top: 2rem;
+    @include breakpoint(desktop) {
+      position: absolute;
+    }
     p {
       font-size: 1.4rem;
     }

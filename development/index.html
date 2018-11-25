@@ -261,9 +261,11 @@
           </div>
 
           <!-- sidebar ad -->
-          <a href="[CLICK_URL]" class="third-section__ad">
-            <img src="./img/sidebar_ad.jpg" alt="sidebar" />
-          </a>
+          <aside class="sidebar">
+            <a href="[CLICK_URL]" class="third-section__ad slide-content">
+              <img class="slide-content-img" src="./img/sidebar_ad.jpg" width="277" alt="sidebar" />
+            </a>
+          </aside>
         </div>
       </section>
 
@@ -372,24 +374,22 @@
               you are allowed to keep the book, but you are allowed to borrow
               just 1 per calendar month. Still, it comes free of charge.
             </p>
-            <img
-              class="section__img"
-              src="./img/reading_tablet_img.jpg"
-              alt="woman reading tablet"
-            />
-            <p class="text--italic fifth-section__p--gray-bg">
-              There is also the Prime Reading service that offers over
-              <a href="[CLICK_URL]" class="text--bold"
-                >1000 books in this format.</a
-              >
-              Finally, there is the Kindle First program that allows downloading
-              a free book every month to all Prime users.
-              <a href="[CLICK_URL]" class="text--bolder">
-                It often includes titles that haven’t been published in hard
-                copy yet! <br />
-                - Melisa Coswell
-              </a>
-            </p>
+            <div class="fifth-section__gray-img">
+              <img src="/img/reading_tablet_img.jpg" alt="" />
+              <p class="text--italic fifth-section__p--gray-bg">
+                There is also the Prime Reading service that offers over
+                <a href="[CLICK_URL]" class="text--bold"
+                  >1000 books in this format.</a
+                >
+                Finally, there is the Kindle First program that allows
+                downloading a free book every month to all Prime users.
+                <a href="[CLICK_URL]" class="text--bolder">
+                  It often includes titles that haven’t been published in hard
+                  copy yet! <br />
+                  - Melisa Coswell
+                </a>
+              </p>
+            </div>
             <h3 class="subhead--smaller">9. Free Prime For Months</h3>
             <p class="text--bold">
               For any delivery that comes too late you are eligible for a
@@ -458,8 +458,7 @@
     </main>
 
     <footer class="footer">
-      <img src="./img/amazon_footer_bg.jpg" alt="amazon" />
-      <div class="footer__text-content">
+      <div class="container footer__text-content">
         <h4>
           These are the most important Prime features that come with Amazon
           Prime:
@@ -488,8 +487,13 @@
           month.
         </p>
       </div>
+      <img src="./img/amazon_footer_bg.jpg" alt="amazon" />
     </footer>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

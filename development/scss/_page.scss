@@ -1,0 +1,270 @@
+.navigation {
+  height: 10rem;
+  background: #1f2936;
+  display: flex;
+  @include breakpoint(phone) {
+    height: 15rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(phone) {
+      flex-direction: column;
+      padding: 1rem 0 2rem;
+    }
+  }
+
+  &__list__item {
+    color: $white;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+    @include breakpoint(phone) {
+      padding: 0 0.2rem;
+    }
+    span {
+      text-transform: lowercase;
+      font-weight: lighter;
+    }
+  }
+
+  &__search {
+    font-size: 2.5rem;
+    a {
+      height: auto;
+    }
+  }
+}
+
+// Header
+
+.header {
+  background: center / cover no-repeat url(".././img/top_bg.jpg");
+  position: relative;
+  padding-top: 33rem;
+  color: $white;
+  margin-bottom: 6.3rem;
+
+  &__ribbon {
+    background: #e50000;
+    font-size: 1.8rem;
+    width: 48rem;
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    height: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 4.8rem;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    padding-left: 1rem;
+    margin-bottom: 6.5rem;
+    color: $white;
+    .separator {
+      padding: 0 2rem;
+    }
+  }
+
+  &__text {
+    font-size: 3rem;
+    padding: 2.8rem 3.1rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 1)
+    );
+    margin-bottom: -10px;
+    position: relative;
+    bottom: -2px;
+    line-height: 1.4;
+  }
+
+  &__social {
+    position: absolute;
+    bottom: -2.5rem;
+    &-box {
+      font-size: 2.2rem;
+      color: $white;
+      padding: 0.6rem 1rem;
+      &--fb {
+        background-color: #3a5a99;
+      }
+      &--tw {
+        background-color: #30a9d6;
+        margin: 0 3.1rem;
+      }
+      &--mail {
+        background-color: #8a8a8a;
+      }
+    }
+  }
+}
+
+// Rest of the page
+p,
+h3 {
+  color: $main;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+.text--regular--sm {
+  font-size: 1.6rem;
+}
+.content {
+  h2 {
+    font-size: 3.6rem;
+  }
+  .subhead--smaller {
+    font-size: 3rem;
+    margin: 3rem 0;
+  }
+}
+
+.container--section {
+  width: 96rem;
+  padding-left: 3.1rem;
+  @include breakpoint(phone) {
+    width: 90%;
+  }
+}
+
+.section__img {
+  margin: 1rem 0 1rem -5%;
+  max-width: 105%;
+}
+
+.first-section {
+  &__p1 {
+    margin-bottom: 3rem;
+  }
+  &__p2 {
+    margin-bottom: 6rem;
+  }
+  &__subhead {
+    text-align: center;
+    h2 {
+      margin-bottom: 5.3rem;
+    }
+  }
+}
+.second-section {
+  background: top / cover no-repeat url(".././img/family_laughing.jpg");
+  margin-bottom: 2rem;
+  .container--section {
+    padding-top: 2.5rem;
+    background-color: rgba(white, 0.6);
+  }
+
+  &__p1 {
+    margin-bottom: 2rem;
+  }
+  &__p2 {
+    span {
+      margin-right: 2.2rem;
+      line-height: 2;
+    }
+  }
+  &__p3 {
+    padding-bottom: 1rem;
+  }
+}
+
+.third-section {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(phone) {
+      flex-direction: column;
+    }
+  }
+  .subhead--smaller {
+    margin: 5rem 0;
+  }
+  &__ad {
+    @include breakpoint(phone) {
+      align-self: center;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.fourth-section {
+  background-color: #960000;
+  &--bg {
+    background: top / cover no-repeat url(".././img/amazon_music_img.jpg");
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+    h2,
+    p {
+      color: $white;
+    }
+  }
+
+  &__subhead {
+    text-align: center;
+    h2 {
+      line-height: 1.3;
+      margin: 4rem 0;
+    }
+  }
+}
+
+.fifth-section {
+  .subhead--smaller {
+    margin: 5rem 0;
+  }
+  .text--underline {
+    text-align: center;
+    font-size: 3.1rem;
+    margin: 4rem 0;
+    line-height: 1.2;
+  }
+  .pull-top {
+    margin-top: -10rem;
+  }
+  &__p--gray-bg {
+    margin: -1.1rem 1.5rem 1rem -5%;
+    padding: 2.5rem 3.1rem;
+    background: #5a5a5a;
+    color: $white;
+    font-size: 1.6rem !important;
+  }
+  .text--note {
+    margin: 2.5rem 4rem;
+    font-size: 1.2rem;
+  }
+}
+
+.footer {
+  position: relative;
+  &__text-content {
+    position: absolute;
+    top: 0;
+    left: 37rem;
+    padding-top: 2rem;
+    p {
+      font-size: 1.4rem;
+    }
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 3.5rem;
+    }
+    h2 {
+      margin: 1.5rem 0 1rem;
+      font-size: 3.6rem;
+    }
+  }
+}

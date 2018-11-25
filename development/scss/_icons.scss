@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Icomoon";
+  src: url("../fonts/icomoon.ttf") format("ttf"),
+    url("../fonts/icomoon.woff") format("woff"),
+    url("../fonts/icomoon.svg") format("svg");
+}
+
+.icon {
+  font-family: "Icomoon";
+  width: 2rem;
+  // margin: 0 5px;
+  color: #fff;
+
+  &:hover {
+    color: indianred;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    position: absolute;
+  }
+}
+
+.icon-search {
+  &:before {
+    content: "\e986";
+  }
+}
+
+.icon-share {
+  &:before {
+    content: "\ea7d";
+  }
+}
+
+.icon-fb {
+  &:before {
+    content: "\ea90";
+  }
+}
+
+.icon-tw {
+  &:before {
+    content: "\ea96";
+  }
+}
+
+.icon-rss {
+  &:before {
+    content: "\ea9b";
+  }
+}
+
+.icon-arrow {
+  &:before {
+    content: "\e900";
+  }
+}

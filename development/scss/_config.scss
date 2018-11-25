@@ -1,0 +1,142 @@
+// Functions & Mixins
+
+// Calculate vw from pixels
+@function calcVw($target, $container) {
+  @return ($target / $container) * 100vw;
+}
+
+// Responsive font size
+@mixin fontSizeVw($fs-phone, $fs-desktop) {
+  font-size: #{$fs-desktop}px;
+
+  @include breakpoint(phone) {
+    font-size: calcVw($fs-phone, $site-mob-design);
+  }
+
+  @include breakpoint(desktop) {
+    font-size: calcVw($fs-desktop, $site-desk-design);
+  }
+}
+
+// Breakpoint media queries
+@mixin breakpoint($break) {
+  @if $break == phone {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $break == desktop {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// Responsive Config
+
+$site-desk-design: 1920;
+$container-desk: 1280;
+$site-mob-design: 375;
+$container-mob: 330;
+$font-size-base: 10;
+$white: #ffffff;
+$main: #333333;
+$hover: indianred;
+$promo: #ff0000;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: $white;
+  line-height: 1;
+}
+body {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: $hover;
+  }
+}
+
+html {
+  @include fontSizeVw($font-size-base/2, $font-size-base);
+  @media screen and (min-width: 1921px) {
+    font-size: 10px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 2rem;
+  width: calcVw($container-desk, $site-desk-design);
+
+  @include breakpoint(phone) {
+    width: calcVw($container-mob, $site-mob-design);
+  }
+}
+
+.mg1 {
+  margin: 1rem 0;
+}
+
+p {
+  color: $main;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover,
+  &:active,
+  &:focus {
+    color: indianred;
+  }
+}
+
+.text--regular {
+  font-weight: 500;
+}
+
+.text--bold {
+  font-weight: 700;
+}
+
+.text--bolder {
+  font-weight: 900;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--underline {
+  text-decoration: underline;
+}
+
+.text--promo {
+  color: $promo;
+  font-weight: 700;
+  &:hover {
+    color: black;
+  }
+}

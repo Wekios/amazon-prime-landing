@@ -1,0 +1,25 @@
+{
+  "name": "amazon-prime",
+  "version": "1.0.0",
+  "description": "amazon prime landing page",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-beautify": "^2.0.1",
+    "gulp-css": "^0.1.0",
+    "gulp-cssbeautify": "^1.0.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-replace-path": "^0.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wekios",
+  "license": "ISC"
+}
